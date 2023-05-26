@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xqin</groupId>
+    <artifactId>component-bom</artifactId>
+    <version>${base.component.version}</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>
+        Maven BOM Template
+        https://github.com/anliksim/maven-template-bom
+    </description>
+    <url>https://github.com/qinxinyou/base-component</url>
+
+<!--    <licenses>-->
+<!--        <license>-->
+<!--            <name>GNU Lesser General Public License v2.1</name>-->
+<!--            <url>https://github.com/alibaba/COLA/blob/master/LICENSE</url>-->
+<!--            <distribution>repo</distribution>-->
+<!--        </license>-->
+<!--    </licenses>-->
+<!--    <scm>-->
+<!--        <connection>scm:git:https://github.com/alibaba/COLA.git</connection>-->
+<!--        <developerConnection>scm:git:https://github.com/alibaba/COLA.git</developerConnection>-->
+<!--        <url>https://github.com/alibaba/COLA</url>-->
+<!--    </scm>-->
+<!--    <issueManagement>-->
+<!--        <url>https://github.com/qinxinyou/base-component/issues</url>-->
+<!--        <system>GitHub Issues</system>-->
+<!--    </issueManagement>-->
+<!--    <developers>-->
+<!--        <developer>-->
+<!--            <id>xqin</id>-->
+<!--            <name>xqin</name>-->
+<!--            <email>806081568(at)qq.com</email>-->
+<!--            <roles>-->
+<!--                <role>Developer</role>-->
+<!--                <role>Architect</role>-->
+<!--            </roles>-->
+<!--            <timezone>+8</timezone>-->
+<!--            <url>https://github.com/xqin</url>-->
+<!--        </developer>-->
+<!--    </developers>-->
+
+    <!-- version Management -->
+    <properties>
+        <base.component.version>1.0.0-SNAPSHOT</base.component.version>
+
+        <!-- boot 相关 -->
+        <spring.boot.version>2.7.5</spring.boot.version>
+
+        <!-- Web 相关 -->
+
+        <!-- DB 相关 -->
+        <druid.version>1.2.16</druid.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.5.3.1</mybatis-plus-generator.version>
+        <dynamic-datasource.version>3.6.1</dynamic-datasource.version>
+
+        <!-- tool 相关 -->
+        <lombok.version>1.18.26</lombok.version>
+        <hutool.version>5.8.15</hutool.version>
+        <guava.version>31.1-jre</guava.version>
+        <jsoup.version>1.15.4</jsoup.version>
+    </properties>
+
+    <!-- jar Management -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- component start -->
+            <dependency>
+                <groupId>com.xqin</groupId>
+                <artifactId>component-dto</artifactId>
+                <version>${base.component.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xqin</groupId>
+                <artifactId>component-exception</artifactId>
+                <version>${base.component.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xqin</groupId>
+                <artifactId>component-util</artifactId>
+                <version>${base.component.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xqin</groupId>
+                <artifactId>component-module-starter-mybatis</artifactId>
+                <version>${base.component.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xqin</groupId>
+                <artifactId>component-module-starter-web</artifactId>
+                <version>${base.component.version}</version>
+            </dependency>
+            <!-- component end -->
+
+            <!-- boot start -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- boot end -->
+
+            <!-- web start -->
+            <!-- web end -->
+
+            <!-- DB start -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId> <!-- 代码生成器，使用它解析表结构 -->
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId> <!-- 多数据源 -->
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+            <!-- DB end -->
+
+            <!-- tool start -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+            <!-- tool end -->
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -1,0 +1,2 @@
+com.xqin.component.modules.datasource.config.XqinDataSourceAutoConfiguration
+com.xqin.component.modules.mybatis.config.XqinMybatisAutoConfiguration
